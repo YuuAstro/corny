@@ -2,11 +2,11 @@
 	padding: 0;
 	margin: 0;
 }
-body{
+.bg{
 	background: url(bg1.jpg) no-repeat;
 	background-size: cover;
-/* 	height: 100vh; */
-/* 	width: 100%; */
+	height: auto;
+	width: 100%;
 }
 .navbar{
 	position: fixed;
