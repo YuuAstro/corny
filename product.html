@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CornHub Products</title>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css"></style>
+	<!-- Script to get all the Customer Details value -->
+		<script language="JavaScript">
+		    function showReceipt() {
+		    	let name = document.getElementById("Name").value;
+				let address = document.getElementById("Address").value;
+				let contact = document.getElementById("Contacts").value;
+				var today = new Date();
+				var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+				var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+				var CurrentDateTime = date+' '+time;
+
+				var refNum = Math.floor(1000000000 + Math.random() * 9000000000);
+
+		        document.getElementById('user').innerHTML = name;
+		        document.getElementById('add').innerHTML = address;
+		        document.getElementById('con').innerHTML = contact;
+		        document.getElementById('ot').innerHTML = "Order Time: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"+ CurrentDateTime;
+		        document.getElementById('rn').innerHTML = "Reference Number: &emsp;&emsp;&emsp;&emsp;" + refNum;
+
+		    }
+
+		    function showOrderSummary() {
+		    	let prod1 = document.getElementById("BC").value;
+				let prod2 = document.getElementById("JCR").value;
+				let prod3 = document.getElementById("GC").value;
+				let prod4 = document.getElementById("MC").value;
+				let pr1 = parseFloat(prod1) * 89.00;
+				let pr2 = parseFloat(prod2) * 49.00;
+				let pr3 = parseFloat(prod3) * 119.00;
+				let pr4 = parseFloat(prod4) * 149.00;
+				let subtotal = parseFloat(pr1) + parseFloat(pr2) + parseFloat(pr3) + parseFloat(pr4);
+				let total = subtotal + 40;
+				if(prod1>0){
+					pr1 = parseFloat(pr1).toFixed(2);
+					document.getElementById('p1').innerHTML = "BUTTERED CORN &emsp;&emsp; (x"+prod1+")&emsp; PHP "+pr1;
+				}
+				
+		        if(prod2>0){
+					pr2 = parseFloat(pr2).toFixed(2);
+		        	document.getElementById('p2').innerHTML = "JAPANESE CORN RICE &emsp; (x"+prod2+")&emsp;	PHP "+pr2;
+		        }
+			        
+		        if(prod3>0){
+			        pr3 = parseFloat(pr3).toFixed(2);
+		        	document.getElementById('p3').innerHTML = "GRILLED CORN &emsp;&emsp; (x"+prod3+")&emsp; PHP "+pr3;
+		        }
+			        
+		        if(prod4>0){
+			        pr4 = parseFloat(pr4).toFixed(2);
+		        	document.getElementById('p4').innerHTML = "MEXICAN CORN &emsp;&emsp; (x"+prod4+")&emsp; PHP "+pr4;
+		        } 
+		        
+		        document.getElementById('pd').innerHTML = "Payment Details: ";
+		        document.getElementById('ps').innerHTML = "Product Subtotal: &emsp;&emsp;&emsp; PHP " + subtotal;
+		        document.getElementById('df').innerHTML = "Delivery Fee: &emsp;&emsp;&emsp;&emsp; PHP 40.00";
+		        document.getElementById('total').innerHTML = "Total: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; PHP " + total;
+		    }
+
+	  	</script>
+</head>
+<body>
+
+	<div id="Home">
+		<nav class="navbar">
+			<img class="logo" src="logo.png">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a class="active" href="#Products">Product</a></li>
+				<li><a href="About.html">About</a></li>
+				
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Product Div -->
+
+	<div id="Products"><br><br><br>
+		<h1 class="prod" id="Products">
+			Products
+		</h1>
+
+		<h2>We will give you the best quality products.</h2>
+		<br>
+
+	<!-- Images -->
+		<div class="Products">
+		  <div class="gallery">
+		    <a target="_blank" href="p2.jpg">
+		      <img src="p2.jpg" alt="Buttered Corn" width="600" height="400">
+		    </a>
+		    <div class="desc">
+		    	Buttered Corn<br>
+		    	<p>
+		    		This buttered corn may sound a little crazy to you, but don't knock it until you try it. We use milk in addition to the butter to reduce the amount of butter, but still, coat each piece of corn. This is best paired with sweet corn use frozen or fresh, not canned corn.
+		    	</p>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="Products">
+		  <div class="gallery">
+		    <a target="_blank" href="p3.jpg">
+		      <img src="p3.jpg" alt="Corn Rice" width="600" height="400">
+		    </a>
+		    <div class="desc">
+		    	Japanese Corn Rice<br>
+		    	<p>
+		    		This Japanese corn rice is made with fresh summer corn and rice seasoned with soy souce and generous amoun of butter. The rich taste of butter and burnt soy sauce brings out the familiar flavor of Japanese street food. A delicious ode to summer.
+		    	</p>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="Products">
+		  <div class="gallery">
+		    <a target="_blank" href="p4.jpg">
+		      <img src="p4.jpg" alt="Grilled Corn" width="600" height="400">
+		    </a>
+		    <div class="desc">
+		    	Grilled Corn<br>
+		    	<p>
+		    		If you haven't bitten into a sweet, juicy ear of Grilled Corn on the Cob, with butter dripping down your chin and salt and spices on your lips, did summer even really happen? Don't wait to find out!
+		    	</p>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="Products">
+		  <div class="gallery">
+		    <a target="_blank" href="p1.jpg">
+		      <img src="p1.jpg" alt="Mexican Corn" width="600" height="400">
+		    </a>
+		    <div class="desc">
+		    	Mexican Corn<br>
+		    	<p>
+		    		Top char-grilled corn on the cob with a tangy, creamy sauce, 
+		    		sprinkle with crumbled cheese and dive in.
+		    	</p>
+			</div>
+		  </div>
+		</div>
+
+		<!-- Button Buy Now -->
+		<div class="clearfix"></div>
+		<div class="buttons" >
+		  <button class="button1">
+		  	<a href="#popup1">
+		  		BUY NOW
+		  	</a>
+		  </button>
+		</div>
+
+		<!-- Button pop up display collection of Order -->
+		<div id="popup1" class="overlay">
+			<div class="popup">
+				<a class="close" href="#button1">&times;</a>
+				<form action="#popup2">
+					 <header>PRODUCT</header>
+					 <br>
+				<div class="field">
+                    <span class="product">
+                    	<img src="BC.png" width="100%" height="100%" >
+                    </span>
+                    <input id="BC" class="pro" type="number" min="0" max="100" value="0">
+                </div>
+
+                <div class="field space">
+                    <span class="product">
+                    	<img src="JCR.png" width="100%" height="100%" >
+                    </span>
+                    <input id="JCR" class="pro" type="number" min="0" max="100" value="0">
+                </div>
+
+                <div class="field space">
+                    <span class="product">
+                    	<img src="GC.png" width="100%" height="100%" >
+                    </span>
+                    <input id="GC" class="pro" type="number" min="0" max="100" value="0">
+                </div>
+
+                <div class="field space">
+                    <span class="product">
+                        <img src="MC.png" width="100%" height="100%" >
+                    </span>
+                    <input id="MC" class="pro" type="number" min="0" max="100" value="0">
+                </div>
+
+                <br>
+                <div class="field">
+                    <input onclick="showOrderSummary();" class="but" type="submit" value="PLACE ORDER">
+                </div>
+				</form>
+				
+			</div> <!-- end of popup class -->
+		
+		</div> <!-- end of class overlay for Order-->
+
+		<!-- Button pop up display for Customer details -->
+		<div id="popup2" class="overlay">
+			<div class="popup">
+				<a class="close" href="#button1">&times;</a>
+				<form action="#popup3">
+					 <header>Customer Details</header>
+					 <br>
+					<div class="field">
+	                    <span class="user">
+	                    	<img src="icon_user.png" width="100%" height="100%" >
+	                    </span>
+	                    <input id="Name" class = "cd" type="text" required placeholder="Name">
+	                </div>
+
+	                <div class="field space">
+	                    <span class="add">
+	                    	<img src="icon_address.png" width="100%" height="100%" >
+	                    </span>
+	                    <input id="Address" class="cd" type="text" required placeholder="Address">
+	                </div>
+
+	                <div class="field space">
+	                    <span class="con">
+	                    	<img src="icon_phone.png" width="100%" height="100%" >
+	                    </span>
+	                    <input id="Contacts" class="cd" type="text" required placeholder="Email or Phone">
+	                </div>
+					<br>
+					<div class="field">
+	                    <input  onclick="showReceipt();" class="but" type="submit" value="PROCEED TO CHECKOUT">
+	                </div>
+				</form>
+				
+			</div> <!-- end of popup class -->
+		
+		</div> <!-- end of class overlay for customer details-->
+
+		<!-- Button pop up display Order Summary-->
+		<div id="popup3" class="overlay">
+			<div class="popup">
+				<a class="close" href="#button1">&times;</a>
+				<form action="#popup4">
+					 <header>ORDER SUMMARY</header>
+					 <br>
+						<p id='p1' class="order"></p><br>
+						<p id='p2' class="order"></p><br>
+						<p id='p3' class="order"></p><br>
+						<p id='p4' class="order"></p><br>
+						<p id='pd' class="order"></p><br>
+						<p id='ps' class="order"></p><br>
+						<p id='df' class="order"></p><br>
+						<p id='total' class="order"></p><br>
+						<br>
+		                <div class="field">
+		                    <input class="but" type="submit" value="CHECKOUT">
+		                </div>
+				</form>
+				
+			</div> <!-- end of popup class -->
+		
+		</div> <!-- end of class overlay for Order-->
+
+		
+		<!-- Button pop up to display Receipt -->
+		<div id="popup4" class="overlay">
+			<div class="popup">
+				<a class="close" href="#button1">&times;</a>
+				<form action="#">
+				 	<header>Receipt</header>
+				 	<br>
+				 	<p id='user' class="resit"></p><br>
+					<p id='add' class="resit"></p><br>
+					<p id='con' class="resit"></p><br>
+					<p id='ot' class="resit"></p><br>
+					<p id='rn' class="resit"></p><br>
+					<br>
+					<div class="field">
+	                    <input class="but" type="submit" value="Done">
+	                </div>
+				</form>
+				
+			</div> <!-- end of popup class -->
+		
+		</div> <!-- end of class overlay for customer details-->
+		
+
+	<!-- About-->
+	<div id= "About" class="content"><br><br><br><br>
+		<h1>Contacts</h1>
+	 	<p>Explore our Web site to learn more about our Online Foor Business.</p>
+	 	<p>Thinking about visiting?</p>
+	 	<p>Call us at 09123456789 or</p>
+	 	<p>Send us e-mail to 
+	 		<a href="mailto:cornhub@isp.com">
+	 		<span style="text-decoration: underline;">cornhub@isp.com</span>
+	 		</a>
+	 	</p>
+	 	<br><br><br><br><br><br>
+	</div>
+</body>
+</html>
